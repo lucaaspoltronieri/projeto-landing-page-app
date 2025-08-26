@@ -5,6 +5,7 @@
 }
 
 * {
+    /*RESET*/
     padding: 0;
     margin: 0;
     font: inherit;
@@ -28,7 +29,7 @@
 
    
    /*ff = font family - fw = font weigth*/
-    --ff-sans: 'Inte', system-ui, sans-serif;
+    --ff-sans: 'Inter', system-ui, sans-serif;
     --fw-base: 400;
     --fw-md: 500;
     --fw-bold: 800;

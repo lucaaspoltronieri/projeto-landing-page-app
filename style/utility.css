@@ -33,7 +33,7 @@
     display: flex;
 }
 
-.itens-center {
+.items-center {
     align-items: center;
 }
 
@@ -52,6 +52,11 @@
 @media (width >= 80em) {
     .container {
         --max-width: 80rem;
+    }
+
+    .even-columns {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
     }
 
     .desktop-only {

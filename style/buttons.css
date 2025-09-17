@@ -50,28 +50,49 @@
 }
 
 .btn[aria-label] {
+    
     position: relative;
+    background: transparent;
 
     &::before {
-        content: "";
+        content: '';
         position: absolute;
+        inset: 0;
         border-radius: inherit;
-        inset: 1px;
-        background-color: var(--background-color);
+        top: 0;
+        left: 0;
+        padding: .10rem;
+        background: #fff;
+        mask: content-box;
+        mask-composite: exclude;
 
-    }
-    &::after {
+        -webkit-mask-composite: destination-out;
+        -webkit-mask: 
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#ff1 0 0);
+        -webkit-mask-composite: destination-out;  /* suporte */
+
+        }
+
+        &:hover::before {
+        background: linear-gradient(
+            90deg,
+            var(--brand-color-secondary) 0%,
+            var(--brand-color-primary) 100%);
+        }
+
+        &::after {
         content: attr(aria-label); /*pega o atributo*/
         background: var(--btn-bg-color);
         -webkit-background-clip: text;
         background-clip: text; /*recorte conforme o texto*/
         color: transparent;
         position: relative;
-        z-index: 1;
+        z-index: 1; 
     }
+    
 }
 
-/*CRIAR CLASSE DE BOTÕES = PRIMÁRIO E SECUNDÁRIO*/
 
 @media (width >= 80em) {
 
